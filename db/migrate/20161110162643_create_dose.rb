@@ -1,4 +1,4 @@
-class CreateDoses < ActiveRecord::Migration[5.0]
+class CreateDose < ActiveRecord::Migration[5.0]
   def change
     create_table :doses do |t|
       t.text :description
