@@ -1,15 +1,18 @@
 <div class="text-center">
-  <h1>Nouveau cocktail</h1>
+  <h1>Ajouter une dose</h1>
 </div>
 
 <div class="container">
   <div class="row padded">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for @cocktail do |f| %>
-        <%= f.input :name %>
+
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.input :ingredient_id, collection: @ingredients %>
         <%= f.button :submit, class: "btn btn-primary" %>
         <%= link_to "Annuler", root_path, {class: "btn btn-primary"} %>
       <% end %>
+
     </div>
   </div>
 </div>
