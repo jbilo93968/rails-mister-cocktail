@@ -10,7 +10,11 @@
         <ul class="list-unstyled" class="text-center">
           <% @cocktail.doses.each do |dose| %>
             <li>
-              <%= dose.description %> - <%= dose.ingredient.name %> - <%= link_to '(Supprimer)', dose_path(dose), method: :delete %>
+              <%= dose.description %> - <%= dose.ingredient.name %> -
+              <%= link_to dose_path(dose), method: :delete do  %>
+              <i class="fa fa-trash-o fa-fw"></i>
+              <% end %>
+
             </li>
           <% end %>
         </ul>
