@@ -14,4 +14,27 @@
 @import "pages/index";
 @import "vendor/index";
 
+body {
+  height: 150vh;
+  background: #292c2f;
+}
+
+.wrapper {
+  background-color: #FFF;
+  min-height: 1000px;
+}
+
+.card-show {
+  color: white;
+  text-align: center;
+  height: 30vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  opacity: 0.9;
+}
+
 

@@ -1,14 +1,23 @@
-<div class="text-center">
-  <h1>Nouveau cocktail</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path "Bar_drink_zqiql8.png", height: 750, width: 1500, crop: :fill %>')">
+  <div class="banner-content">
+    <h1>Nouveau cocktail</h1>
+  </div>
 </div>
 
 <div class="container">
   <div class="row padded">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for @cocktail do |f| %>
-        <%= f.input :name %>
-        <%= f.button :submit, class: "btn btn-primary" %>
-        <%= link_to "Annuler", root_path, {class: "btn btn-primary"} %>
+        <%= f.input :name, label: 'Nom du cocktail', error: 'Champ obligatoire' %>
+        <%= f.input :photo, error: 'Champ obligatoire'%>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="row padded text-center">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <%= f.button :submit, 'Créer', class: "btn btn-primary" %>
+            <%= link_to "Annuler", root_path, {class: "btn btn-danger"} %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

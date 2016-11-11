@@ -1,29 +1,33 @@
-<div class="text-center">
-  <h1>Liste des Cocktails</h1>
-</div>
-
-
-<div class="container">
-  <div class="row padded">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
-      <ul class="list">
-        <% @cocktails.each do |cocktail| %>
-          <li>
-            <p><%= link_to cocktail.name, cocktail_path(cocktail)%></p>
-          </li>
-        <% end %>
-      </ul>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3" class="button-bottom">
-      <%= link_to 'Create a cocktail', new_cocktail_path, {class: "btn btn-primary"} %>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path "Bar_drink_zqiql8.png", height: 750, width: 1500, crop: :fill %>')">
+  <div class="banner-content">
+    <h1>Mister Cocktail</h1>
+    <p>Tous les meilleurs cocktails à portée de clic</p>
   </div>
 </div>
+
+<div class="banner-index">
+  <div class="text-center">
+    <h2>Devenez le roi du cocktail!</h2><br>
+    <p> Pour faire la fête sans limites, rien de mieux que les cocktails sans alcool. Les possibilités sont infinies : limonade, Schweppes Indian Tonic, jus de fruits, sirops ... Ferez-vous votre propre création, ou préférez-vous piocher parmi nos recettes ? A vos shakers !<p><br>
+    <%= link_to 'Créer votre cocktail', new_cocktail_path, {class: "btn-medium"} %>
+  </div>
+</div>
+
+<div class="container-index">
+  <div class="row text-center">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4 col-lg-3 text-center">
+        <div class="card-index">
+          <%= cl_image_tag cocktail.photo, height: 220, width: 250 %>
+              <p><%= link_to cocktail.name, cocktail_path(cocktail), {class: "btn btn-link"} %></p>
+              <%= render 'shared/product-controls' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 
 
 

@@ -1,9 +1,20 @@
 class DosesController < ApplicationController
-  before_action :load_cocktail, only: [:new, :create, :edit]
+  before_action :load_cocktail, only: [:new, :create, :edit, :update]
 
   def new
     @dose = Dose.new
     @ingredients = Ingredient.all
+  end
+
+  def edit
+    @dose = Dose.find(params[:id])
+  end
+
+  def update
+    @dose = Dose.find(params[:id])
+    if @dose.update(doses_params)
+      redirect_to cocktail_path(@cocktail)
+    end
   end
 
   def create
@@ -33,6 +44,7 @@ class DosesController < ApplicationController
   end
 
 end
+
 
 
 

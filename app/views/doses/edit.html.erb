@@ -1,0 +1,18 @@
+<div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo, height: 600, width: 3000, crop: :fill %>');">
+  <div class="card-description">
+    <h2><%= @cocktail.name %></h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row padded">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for([@cocktail, @dose]) do |f| %>
+        <%= f.input :description %>
+        <%= f.input :ingredient_id, collection: @ingredients %>
+        <%= f.button :submit, 'Mettre à jour', class: "btn btn-primary" %>
+        <%= link_to "Annuler", cocktail_path(@cocktail), {class: "btn btn-danger"} %>
+      <% end %>
+    </div>
+  </div>
+</div>

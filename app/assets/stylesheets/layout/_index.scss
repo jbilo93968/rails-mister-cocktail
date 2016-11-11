@@ -1,6 +1,62 @@
 @import "utilities";
 @import "footer";
 @import "navbar";
+@import "product-controls";
 
+.banner {
+  color: white;
+  text-align: center;
+  height: 30vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
 
+.banner-index {
+  display: flex;
+  height: 30vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-medium {
+  color: white;
+  padding: 15px 15px;
+  border-radius: 4px;
+  background: #2381D0;
+  transition: background 0.3s ease;
+  opacity: 0.9;
+    &:hover {
+      opacity: 1;
+      background: #2381D0;
+      text-decoration: none;
+      color: white;
+  }
+}
+
+.container-index {
+  padding-bottom: 50px;
+}
+
+.card-index {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn-link {
+  font-size: 14px;
+}
+
+.btn-link:hover, .btn-link:focus {
+  color: #1f74ba;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 14px;
+}
 
